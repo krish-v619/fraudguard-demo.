@@ -18,50 +18,38 @@ SUMMARY_PATH = BASE / 'dataset_summary.json'
 st.set_page_config(page_title='FraudGuard | Credit Card Risk Monitor', page_icon='🛡️', layout='wide', initial_sidebar_state='expanded')
 
 st.markdown('''<style>
-:root {
-    --ink: #f8fafc;
-    --muted: #cbd5e1;
-    --panel: #142238;
-    --line: #455b78;
-    --accent: #5eead4;
-}
-
 .stApp {
-    background: linear-gradient(135deg,#08111f,#0c1728,#101b2f);
-    color: #f8fafc;
-}
-
-.stApp p, .stApp label, .stApp span,
-.stApp li, .stApp h1, .stApp h2,
-.stApp h3, .stApp h4 {
-    color: #f1f5f9;
-}
-
-[data-testid="stSidebar"] {
     background: #0b1525;
+    color: #ffffff;
 }
 
-[data-testid="stSidebar"] * {
+.stApp p, .stApp label, .stApp h1,
+.stApp h2, .stApp h3, .stApp h4,
+.stApp li {
     color: #f8fafc !important;
 }
 
+[data-testid="stSidebar"] {
+    background: #101e32;
+}
+
+[data-testid="stSidebar"] * {
+    color: #ffffff !important;
+}
+
 [data-testid="stMetric"] {
-    background: #142238;
-    border: 1px solid #455b78;
-    padding: 18px;
-    border-radius: 15px;
+    background: #192b43;
+    border: 1px solid #49617e;
+    border-radius: 14px;
+    padding: 16px;
 }
 
 [data-testid="stMetricLabel"] {
-    color: #cbd5e1 !important;
+    color: #dce7f5 !important;
 }
 
 [data-testid="stMetricValue"] {
     color: #ffffff !important;
-}
-
-.stApp [data-testid="stCaptionContainer"] * {
-    color: #cbd5e1 !important;
 }
 
 .stApp input, .stApp textarea {
@@ -70,27 +58,72 @@ st.markdown('''<style>
     -webkit-text-fill-color: #111827 !important;
 }
 
-div.stButton > button {
-    background: #1c4260;
+.stApp input::placeholder {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+}
+
+/* Buttons */
+.stButton button,
+.stFormSubmitButton button {
+    background: #176080 !important;
     color: #ffffff !important;
-    border: 1px solid #52708f;
+    border: 1px solid #5eead4 !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    min-height: 44px;
+}
+
+.stButton button:hover,
+.stFormSubmitButton button:hover {
+    background: #117a80 !important;
+    color: #ffffff !important;
+}
+
+/* Password visibility and toolbar icons */
+.stApp button svg,
+.stApp [data-testid="stToolbar"] svg {
+    fill: currentColor;
+    color: #ffffff !important;
+}
+
+.stApp button[kind="header"] {
+    color: #ffffff !important;
+}
+
+/* Recent activity and data tables */
+[data-testid="stDataFrame"] {
+    background: #ffffff !important;
+    border: 1px solid #49617e;
     border-radius: 10px;
-    font-weight: 700;
-    min-height: 2.7rem;
 }
 
-div.stButton > button:hover {
-    border-color: #5eead4;
-    color: #5eead4 !important;
+[data-testid="stDataFrame"] button {
+    color: #172033 !important;
 }
 
+[data-testid="stDataFrame"] svg {
+    color: #172033 !important;
+}
+
+/* Table toolbar and search controls */
+[data-testid="stDataFrame"] [role="toolbar"] {
+    background: #eaf0f7 !important;
+}
+
+[data-testid="stDataFrame"] input {
+    background: #ffffff !important;
+    color: #111827 !important;
+}
+
+/* Cards */
 .card {
-    background: #142238;
-    border: 1px solid #455b78;
+    background: #192b43;
+    border: 1px solid #49617e;
     border-radius: 16px;
-    padding: 20px 22px;
+    padding: 20px;
     margin-bottom: 14px;
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .muted {
@@ -98,30 +131,36 @@ div.stButton > button:hover {
 }
 
 .brand {
+    color: #ffffff !important;
     font-size: 1.75rem;
     font-weight: 800;
-    color: #ffffff !important;
 }
 
 .pill {
-    background: #163b3b;
+    background: #164e4a;
     color: #b8fff0 !important;
     padding: 5px 10px;
-    border-radius: 999px;
+    border-radius: 20px;
 }
 
 .result-fraud {
-    background: rgba(127,29,29,.35);
+    background: #51212b;
     border: 1px solid #ef4444;
     border-radius: 16px;
     padding: 22px;
+    color: #ffffff !important;
 }
 
 .result-safe {
-    background: rgba(6,95,70,.35);
+    background: #124b3c;
     border: 1px solid #10b981;
     border-radius: 16px;
     padding: 22px;
+    color: #ffffff !important;
+}
+
+[data-testid="stAlert"] {
+    border-radius: 12px;
 }
 </style>''', unsafe_allow_html=True)
 
