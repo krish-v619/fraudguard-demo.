@@ -1,0 +1,10 @@
+{
+  "rows_original": 284807,
+  "fraud_original": 492,
+  "legitimate_original": 284315,
+  "rows_cleaned": 283726,
+  "fraud_cleaned": 473,
+  "legitimate_cleaned": 283253,
+  "duplicates_removed": 1081,
+  "fraud_rate_original": 0.1727485630620034
+}
