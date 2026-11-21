@@ -18,19 +18,111 @@ SUMMARY_PATH = BASE / 'dataset_summary.json'
 st.set_page_config(page_title='FraudGuard | Credit Card Risk Monitor', page_icon='🛡️', layout='wide', initial_sidebar_state='expanded')
 
 st.markdown('''<style>
-:root{--ink:#eaf0fb;--muted:#91a0b8;--panel:#111c2e;--line:#263650;--accent:#5eead4}
-.stApp{background:linear-gradient(135deg,#08111f 0%,#0c1728 55%,#101b2f 100%);color:var(--ink)}
-.block-container{padding-top:1.6rem;max-width:1450px}
-[data-testid="stSidebar"]{background:#0b1525;border-right:1px solid #263650}
-[data-testid="stMetric"]{background:#111c2e;border:1px solid #263650;padding:18px;border-radius:15px}
-[data-testid="stMetricLabel"]{color:#9fb0c9}
-[data-testid="stMetricValue"]{color:#f8fafc}
-div.stButton>button{border-radius:10px;border:1px solid #31506d;background:#17334a;color:#f5fbff;font-weight:650;min-height:2.7rem}
-div.stButton>button:hover{border-color:#5eead4;color:#5eead4}
-.card{background:#111c2e;border:1px solid #263650;border-radius:16px;padding:20px 22px;margin-bottom:14px}
-.muted{color:#9fb0c9}.brand{font-size:1.75rem;font-weight:800;letter-spacing:-.04em}.pill{display:inline-block;padding:5px 10px;border-radius:999px;background:#163b3b;color:#8ef3dd;font-size:.78rem;font-weight:700}
-.result-fraud{border:1px solid #ef4444;background:rgba(127,29,29,.22);border-radius:16px;padding:22px}
-.result-safe{border:1px solid #10b981;background:rgba(6,95,70,.22);border-radius:16px;padding:22px}
+:root {
+    --ink: #f8fafc;
+    --muted: #cbd5e1;
+    --panel: #142238;
+    --line: #455b78;
+    --accent: #5eead4;
+}
+
+.stApp {
+    background: linear-gradient(135deg,#08111f,#0c1728,#101b2f);
+    color: #f8fafc;
+}
+
+.stApp p, .stApp label, .stApp span,
+.stApp li, .stApp h1, .stApp h2,
+.stApp h3, .stApp h4 {
+    color: #f1f5f9;
+}
+
+[data-testid="stSidebar"] {
+    background: #0b1525;
+}
+
+[data-testid="stSidebar"] * {
+    color: #f8fafc !important;
+}
+
+[data-testid="stMetric"] {
+    background: #142238;
+    border: 1px solid #455b78;
+    padding: 18px;
+    border-radius: 15px;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #cbd5e1 !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: #ffffff !important;
+}
+
+.stApp [data-testid="stCaptionContainer"] * {
+    color: #cbd5e1 !important;
+}
+
+.stApp input, .stApp textarea {
+    background: #ffffff !important;
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+}
+
+div.stButton > button {
+    background: #1c4260;
+    color: #ffffff !important;
+    border: 1px solid #52708f;
+    border-radius: 10px;
+    font-weight: 700;
+    min-height: 2.7rem;
+}
+
+div.stButton > button:hover {
+    border-color: #5eead4;
+    color: #5eead4 !important;
+}
+
+.card {
+    background: #142238;
+    border: 1px solid #455b78;
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.muted {
+    color: #cbd5e1 !important;
+}
+
+.brand {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ffffff !important;
+}
+
+.pill {
+    background: #163b3b;
+    color: #b8fff0 !important;
+    padding: 5px 10px;
+    border-radius: 999px;
+}
+
+.result-fraud {
+    background: rgba(127,29,29,.35);
+    border: 1px solid #ef4444;
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.result-safe {
+    background: rgba(6,95,70,.35);
+    border: 1px solid #10b981;
+    border-radius: 16px;
+    padding: 22px;
+}
 </style>''', unsafe_allow_html=True)
 
 @st.cache_resource
